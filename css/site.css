@@ -1,0 +1,217 @@
+/* Imported Google Fonts */
+/*
+font-family: 'Allan', cursive;
+font-family: 'Bebas Neue', cursive;
+font-family: 'Fira Sans', sans-serif;
+font-family: 'Poppins', sans-serif;
+font-family: 'Roboto', sans-serif;
+font-family: 'Noto Serif JP', serif;
+*/
+/* Base Color Pallete*/
+/* https://coolors.co/364156-cdcdcd-02358d-09a201-dfc201-b70101-01a8b7 */
+
+:root {
+
+    /* Fonts */
+    --bl-title-font: 'Roboto', sans-serif;
+    --bl-subtitle-font: 'Poppins', sans-serif;
+    --bl-heading-font: 'Bebas Neue', 'sans-serif';
+    --bl-body-font: 'Roboto', sans-serif;
+
+    /* Colors */
+    --bl-primary-color: #02358D;
+    --bl-secondary-color: #364156;
+    --bl-highlight-color: #2272FC;
+    --bl-dark-color: #1F2632;
+    --bl-light-color: #CDCDCD;
+    --bl-background-color: #F5F5F5;
+
+    /* Navbar */
+    --bl-nav-bg-color: var(--bl-dark-color);
+    --bl-nav-toggler: var(--bl-highlight-color);
+    --bl-nav-toggler-glow: hsla(218, 97%, 56%, 0.5);
+    --bl-nav-text-muted: hsl(218, 23%, 75%);
+
+    /* Form */
+    --bl-form-focous-color: var(var(--bl-secondary-color));
+    --bl-formfocous-shadow: var(var(--bl-primary-color));
+    --bl-formfocous-background-color: var(--bl-secondary-color);
+
+    /* Text styles */
+    --bl-title-color: var(--bl-dark-color);
+    --bl-font-size: 1.2rem;
+    --bl-font-weight: 400;
+    --bl-line-height: 1.5rem;
+}
+
+/***** STICKY FOOTER *****/
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex-grow: 1;
+    position: relative;
+    top: 76px;
+}
+
+footer {
+    flex-shrink: 0;
+    position: relative;
+    top: 76px;
+}
+
+/***** End STICKY FOOTER *****/
+
+
+/***** NAVBAR *****/
+
+#mainNav {
+    background-color: var(--bl-nav-bg-color) !important;
+    font-family: var(--bl-subtitle-font);
+    font-size: 1rem;
+}
+
+#mainNav .active {
+    border-bottom: 4px solid var(--bl-primary-color);
+
+}
+
+#mainNav .nav-link {
+    text-transform: uppercase;
+}
+
+.navbar-toggler-bl {
+    color: var(--bl-nav-toggler);
+    font-size: 2rem;
+}
+
+.navbar-toggler {
+    color: var(--bl-nav-toggler-glow);
+    border-color: var(--bl-highlight-color);
+}
+
+.navbar-brand {
+    font-family: var(--bl-title-font);
+}
+
+#home,
+#app,
+#code {
+    scroll-margin-top: 86px;
+}
+
+/***** End NAVBAR *****/
+
+
+/***** MAIN *****/
+
+main {
+    max-width: 900px !important;
+}
+
+.appLogo {
+    max-width: 460px;
+}
+
+.checklist {
+    list-style-type: none;
+}
+
+.checklist i {
+    color: var(--bl-secondary-color);
+    padding-right: .5rem;
+}
+
+.techStack img {
+    height: 5em;
+    padding: .5rem;
+}
+
+#appForm,
+#resultsTable {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#resultsTable {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+/***** End MAIN *****/
+
+
+/***** FOOTER *****/
+
+.social-icon {
+    font-size: 2rem;
+    text-decoration: none;
+    color: var(--bl-light-color);
+    transition: color 0.25s;
+}
+
+.social-icon :hover {
+    color: var(--bl-highlight-color);
+}
+
+.footer-main .text-muted {
+    color: var(--bl-nav-text-muted) !important;
+}
+
+.footer-cta {
+    background-color: var(--bl-secondary-color);
+    border-radius: 10px;
+    width: 75%;
+}
+
+.footer-message {
+    font-family: var(--bl-subtitle-font);
+    color: var(--bl-light-color);
+    font-size: 2rem;
+    line-height: 2rem;
+    font-weight: 400;
+    letter-spacing: .09rem;
+}
+
+.footer-bg-cta {
+    background: linear-gradient(to bottom,
+            var(--bl-background-color) 0%,
+            var(--bl-background-color) 50%,
+            var(--bl-dark-color) 50%,
+            var(--bl-dark-color) 100%);
+}
+
+.footer-main {
+    background-color: var(--bl-dark-color);
+}
+
+/***** End FOOTER *****/
+
+
+/***** Media Quieries *****/
+
+/* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {}
+
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {}
+
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {}
+
+/* // X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {}
+
+/* // XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {}
+
+/***** End Media Quieries *****/
