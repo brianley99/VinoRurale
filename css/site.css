@@ -113,8 +113,9 @@ footer {
 
 /***** MAIN *****/
 
-main {
-    max-width: 900px !important;
+.bg-vr {
+    background-color: #8d8ab9;
+    padding-bottom: 40px;
 }
 
 .appLogo {
@@ -133,6 +134,35 @@ main {
 .techStack img {
     height: 5em;
     padding: .5rem;
+}
+
+#hero {
+    background-image: url(/img/pexels-tim-mossholder-2339180.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-right: 3%;
+}
+
+#hero img {
+    background: hsla(335, 100%, 19%, 0.75);
+    border-radius: 3px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.323);
+    backdrop-filter: blur(6.1px);
+    -webkit-backdrop-filter: blur(6.1px);
+    border: 1px solid rgba(99, 0, 41, 1);
+    padding: 20px;
+    max-width: 300px;
+}
+
+.card {
+    max-width: 450px;
+}
+
+.card:hover{
+    position: relative;
+    bottom: 5px;
 }
 
 #appForm,
