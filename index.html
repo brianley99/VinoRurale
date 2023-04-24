@@ -4,7 +4,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-scale=false">
-    <title> Vino Rurale: A Coding Challange by Brian Ley</title>
+    <title> Vino Rurale : A Coding Challange by Brian Ley</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/img/Favicon/favicon.ico" type="image/x-icon" />
 
     <!-- Bootstrap CSS-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -23,15 +26,15 @@
     <!-- Dev Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
 
+    <!-- Prism CSS-->
+    <link rel="stylesheet" href="/css/prism.css" />
+
     <!-- Stylesheets -->
     <link rel="stylesheet" href="/css/site.css" />
 
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="/img/Favicon/favicon.ico" type="image/x-icon" />
-
 </head>
 
-<body>
+<body data-bs-spy="scroll" data-bs-target="#mainNav" onload="displayBookings()">
 
     <header>
         <nav id="mainNav" class="navbar navbar-expand-lg fixed-top navbar-dark">
@@ -50,23 +53,22 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="/index.html">Home</a>
+                            <a class="nav-link active" aria-current="page" href="#hero">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/app.html">The App</a>
+                            <a class="nav-link" href="#app">The App</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/code.html">The Code</a>
+                            <a class="nav-link" href="#code">The Code</a>
                         </li>
                         <li class="nav-item">
-                            <!-- UPDATE REPO LINK-->
-                            <a class="nav-link" href="https://github.com/brianley99" target="_blank">Repo</a>
+                            <a class="nav-link" href="https://github.com/brianley99/VinoRurale" target="_blank">Repo</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="https://bley-portfolio.netlify.app/" target="_blank">About</a>
                         </li>
                         <li class="nav-item">
-                            <!-- ADD LINK TO BLOG-->
+                            <!-- TODO: ADD LINK TO BLOG-->
                             <a class="nav-link" href="#" target="_blank">Blog</a>
                         </li>
                     </ul>
@@ -75,49 +77,433 @@
         </nav>
     </header>
 
-    <main class="container my-3">
-        <div class="row row-cols-1 row-cols-md-2 g-3 h-100 align-items-center py-3">
-            <div class="col">
-                <h1>Coding Challange</h1>
-                <p class="lead">Vino Rurale is a web page programed with JavaScript for users to have the ability to store, edit and delete a list of reservations within a local browser database.</p>
-                <ul class="checklist">
-                    <li>
-                        <i class="bi bi-check-square-fill"></i>
-                        <span>CSS & Bootstrap Layout</span>
-                    </li>
-                    <li>
-                        <i class="bi bi-check-square-fill"></i>
-                        <span>JavaScript Fundamentals</span>
-                    </li>
-                    <li>
-                        <i class="bi bi-check-square-fill"></i>
-                        <span>JavaScript Loops</span>
-                    </li>
-                    <li>
-                        <i class="bi bi-check-square-fill"></i>
-                        <span>JavaScript DOM Manipulation</span>
-                    </li>
-                    <li>
-                        <i class="bi bi-check-square-fill"></i>
-                        <span>Boolean Logic</span>
-                    </li>
-                </ul>
-                <a href="/app.html" class="btn btn-outline-primary btn-lg">Try it out!</a>
-                <h4>Tech Stack</h4>
-                <div class="techStack">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" />
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" />
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" />
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" />
+    <main>
+        <div id="hero" class="container col-xxl-8 px-4 py-5">
+            <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+                <div class="col-10 col-sm-8 col-lg-6">
+                    <img src="/img/Vino Rurale.svg" class="d-block mx-lg-auto img-fluid rounded" alt="Vino Rurale Logo"
+                        width="700" height="500" loading="lazy">
+                </div>
+                <div class="col-lg-6">
+                    <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">
+                        Coding Challange</h1>
+                    <p class="lead">Vino Rurale is a dynamic web page programmed with JavaScript that stores a list of
+                        bookings in a browser database, allowing the user to add/edit/delete.</p>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                        <a href="#app" class="btn btn-primary btn-lg px-4 me-md-2">Try it out!</a>
+                        <a href="#code" class="btn btn-outline-secondary btn-lg px-4">View Code</a>
+                    </div>
                 </div>
             </div>
-            <div class="col order-first order-md-last d-flex">
-                <img src="/img/Vino Rurale.svg" class="img-fluid appLogo rounded-5 mx-auto my-auto" alt="APP lOGO" />
+        </div>
+        <div class="section-divider"></div>
+        <div id="techStack" class="container px-4 py-5">
+            <h2 class="pb-2 border-bottom">Tech Stack</h2>
+            <div class="row g-4 py-5 row-cols-1 row-cols-md-2 row-cols-xl-4">
+                <div class="col d-flex align-items-start">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                        class="mt-2 me-3" />
+                    <div>
+                        <h3 class="fs-2">JavaScript</h3>
+                        <p>I used JavaScript to create interactive elements, validate user input, and enhance user
+                            experience
+                            through dynamic
+                            content, and functionality.</p>
+                    </div>
+                </div>
+                <div class="col d-flex align-items-start">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg"
+                        class="mt-2 me-3" />
+                    <div>
+                        <h3 class="fs-2">Bootstrap</h3>
+                        <p>I used Bootstrap to create responsive and mobile-friendly design. Bootstrap provided a
+                            framework
+                            for creating consistent layouts, typography, and UI components.</p>
+                    </div>
+                </div>
+                <div class="col d-flex align-items-start">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+                        class="mt-2 me-3" />
+                    <div>
+                        <h3 class="fs-2">HTML</h3>
+                        <p>I used HTML to organize text, images, and other
+                            media into a logical and accessible format for users.</p>
+                    </div>
+                </div>
+                <div class="col d-flex align-items-start">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+                        class="mt-2 me-3" />
+                    <div>
+                        <h3 class="fs-2">CSS</h3>
+                        <p>I used CSS to control the color, typography, and other design elements of HTML content to
+                            create
+                            visually
+                            appealing and consistent user interface.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section-divider"></div>
+        <div id="app" class="container px-4 py-5">
+            <h2 class="pb-2 border-bottom">The App</h2>
+
+            <div id="results" class="alert alert-success text-start shadow rounded p-4 mt-3">
+
+                <section id="listings">
+                    <button type="button" data-bs-toggle="modal" data-bs-target="#NewBookingModal"
+                        class="btn btn-primary fs-4">
+                        <i class="bi bi-plus-circle"></i>
+                        New Booking
+                    </button>
+                    <div id="bookingsCards">
+                        <!-- Booking Cards -->
+                    </div>
+                </section>
+            </div>
+        </div>
+        <div class="section-divider"></div>
+        <div id="code" class="container px-4 py-5">
+
+            <h2 class="pb-2 border-bottom">The Code</h2>
+            <h4 class="mt-5">Functions</h4>
+            <div id="seedData" class="pt-3 mt-3">
+                <dl class="row mb-0">
+                    <dt class="col-md-3">seedData</dt>
+                    <dd class="col-md-9">
+                        <p><!-- Function Details --></p>
+                    </dd>
+                </dl>
+                <div class="mx-md-3">
+                    <pre class="line-numbers mt-0">
+                        <code class="language-js">
+                            //seed objects
+var bookings = [
+    {
+        clientName: 'John Doe',
+        people: 4,
+        date: '06/01/2023',
+        time: '4:00 PM',
+    },
+    {
+        clientName: 'Olivia Smith',
+        people: 2,
+        date: '06/05/2023',
+        time: '6:00 PM',
+    },
+    {
+        clientName: 'Isabella Rodriguez',
+        people: 6,
+        date: '06/01/2023',
+        time: '10:00 PM',
+    },
+    {
+        clientName: 'James Wllson',
+        people: 2,
+        date: '06/03/2023',
+        time: '8:00 PM',
+    },
+    {
+        clientName: 'Lucas J. Willson',
+        people: 2,
+        date: '06/03/2023',
+        time: '8:00 PM',
+    },
+]
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <div id="getBookingData" class="pt-3 mt-5">
+                <dl class="row mb-0">
+                    <dt class="col-md-3">getBookingData</dt>
+                    <dd class="col-md-9">
+                        <p><!-- Function Details --></p>
+                    </dd>
+                </dl>
+                <div class="mx-md-3">
+                    <pre class="line-numbers mt-0">
+                        <code class="language-js">
+                            //Create & Retive Database
+function getBookingData() {
+    //Gets all current booking data from local database
+
+    let data = localStorage.getItem('vinoRuraleData');
+
+    if (data == null) {
+
+        let identifiedBookings = bookings.map(booking => {
+            booking.id = generateId();
+            return booking;
+        });
+
+        localStorage.setItem('vinoRuraleData', JSON.stringify(identifiedBookings));
+        data = localStorage.getItem('vinoRuraleData');
+    };
+
+    let currentBookings = JSON.parse(data);
+
+    if (currentBookings.some(booking => booking.id == undefined)) {
+
+        currentBookings.forEach(booking => booking.id = generateId());
+
+        localStorage.setItem('vinoRuraleData', JSON.stringify(currentBookings));
+    };
+
+    return currentBookings;
+}
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <div id="displayBookings" class="pt-3 mt-5">
+                <dl class="row mb-0">
+                    <dt class="col-md-3">displayBookings</dt>
+                    <dd class="col-md-9">
+                        <p><!-- Function Details --></p>
+                    </dd>
+                </dl>
+                <div class="mx-md-3">
+                    <pre class="line-numbers mt-0">
+                        <code class="language-js">
+                            //Display Bookings
+function displayBookings() {
+
+    //get booking data
+    let bookingData = getBookingData();
+
+    //reset page
+    const bookingsCards = document.getElementById('bookingsCards');
+    bookingsCards.innerHTML = '';
+
+    //get template for cards
+    const template = document.getElementById('bookingCardTemplate');
+
+    //use template on each booking
+    for (let i = 0; i &lt; bookingData.length; i++) {
+        const booking = bookingData[i];
+        const card = document.importNode(template.content, true);
+
+        card.querySelector('[data-id="clientName"]').textContent = booking.clientName;
+        card.querySelector('[data-id="people"]').textContent = booking.people;
+        card.querySelector('[data-id="date"]').textContent = booking.date;
+        card.querySelector('[data-id="time"]').textContent = booking.time;
+        card.querySelector('div').setAttribute('data-booking-id', booking.id);
+
+        //display card on page
+        bookingsCards.appendChild(card);
+    };
+
+}
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <div id="saveNewBooking" class="pt-3 mt-5">
+                <dl class="row mb-0">
+                    <dt class="col-md-3">saveNewBooking</dt>
+                    <dd class="col-md-9">
+                        <p><!-- Function Details --></p>
+                    </dd>
+                </dl>
+                <div class="mx-md-3">
+                    <pre class="line-numbers mt-0">
+                        <code class="language-js">
+                            //New Booking
+function saveNewBooking() {
+
+    //get inputs from page
+    let clientName = document.getElementById('newBookingClientName').value;
+
+    let people = parseInt(document.getElementById('newBookingPeople').value);
+
+    let date = document.getElementById('newBookingDate').value;
+    date = new Date(date).toLocaleDateString();
+
+    let timeSelect = document.getElementById('newBookingTime');
+    let timeIndex = timeSelect.selectedIndex;
+    let time = timeSelect.options[timeIndex].text;
+
+    //create new booking object
+    let newBooking = {
+        id: generateId(),
+        clientName: clientName,
+        people: people,
+        date: date,
+        time: time
+    }
+
+    //add booking to database
+    let bookingsData = getBookingData();
+    bookingsData.push(newBooking);
+    localStorage.setItem('vinoRuraleData', JSON.stringify(bookingsData));
+
+    //refresh page with new bookings
+    displayBookings();
+}
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <div id="editBooking" class="pt-3 mt-5">
+                <dl class="row mb-0">
+                    <dt class="col-md-3">editBooking</dt>
+                    <dd class="col-md-9">
+                        <p><!-- Function Details --></p>
+                    </dd>
+                </dl>
+                <div class="mx-md-3">
+                    <pre class="line-numbers mt-0">
+                        <code class="language-js">
+                            //Edit Booking - Fill form
+function editBooking(bookingCard) {
+
+    //get booking data
+    let bookingData = getBookingData();
+
+    //find booking card with id
+    let bookingId = bookingCard.getAttribute('data-booking-id');
+    let booking = bookingData.find(booking => booking.id == bookingId);
+
+    //set booking info on modal form
+    document.getElementById('editBookingId').value = booking.id;
+
+    document.getElementById('editBookingClientName').value = booking.clientName;
+
+    document.getElementById('editBookingPeople').value = booking.people;
+
+    let bookingDate = new Date(booking.date);
+    let bookingDateString = bookingDate.toISOString();
+    let bookingDateArray = bookingDateString.split('T');
+    let bookingDateFormated = bookingDateArray[0];
+    document.getElementById('editBookingDate').value = bookingDateFormated;
+
+    let bookingSelect = document.getElementById('editBookingTime');
+    let optionsArray = [...bookingSelect.options];
+    let index = optionsArray.findIndex(option => option.text == booking.time);
+    bookingSelect.selectedIndex = index;
+}
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <div id="saveEditBooking" class="pt-3 mt-5">
+                <dl class="row mb-0">
+                    <dt class="col-md-3">saveEditBooking</dt>
+                    <dd class="col-md-9">
+                        <p><!-- Function Details --></p>
+                    </dd>
+                </dl>
+                <div class="mx-md-3">
+                    <pre class="line-numbers mt-0">
+                        <code class="language-js">
+                            //Edit Booking - Save
+function saveEditBooking() {
+
+    //get inputs from page
+    let bookingId = document.getElementById('editBookingId').value;
+
+    let clientName = document.getElementById('editBookingClientName').value;
+
+    let people = parseInt(document.getElementById('editBookingPeople').value);
+
+    let date = document.getElementById('editBookingDate').value;
+    date = new Date(date).toLocaleDateString();
+
+    let timeSelect = document.getElementById('editBookingTime');
+    let timeIndex = timeSelect.selectedIndex;
+    let time = timeSelect.options[timeIndex].text;
+
+    //create updated booking
+    let newBooking = {
+        id: bookingId,
+        clientName: clientName,
+        people: people,
+        date: date,
+        time: time
+    }
+
+    //get booking database
+    let bookingsData = getBookingData();
+
+    //find the location of the old event with this id
+    let index = bookingsData.findIndex(booking => booking.id == bookingId);
+
+    //replace that booking with newId
+    bookingsData[index] = newBooking;
+
+    //save it in local storage
+    localStorage.setItem('vinoRuraleData', JSON.stringify(bookingsData));
+
+    //refresh page bookings
+    displayBookings();
+
+}
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <div id="deleteBooking" class="pt-3 mt-5">
+                <dl class="row mb-0">
+                    <dt class="col-md-3">deleteBooking</dt>
+                    <dd class="col-md-9">
+                        <p><!-- Function Details --></p>
+                    </dd>
+                </dl>
+                <div class="mx-md-3">
+                    <pre class="line-numbers mt-0">
+                        <code class="language-js">
+                           //Delete Booking
+function deleteBooking() {
+
+    //get the booking in local storage
+    let bookingsData = getBookingData();
+
+    //filter out booking with id
+    let bookingId = document.getElementById('editBookingId').value;
+    let filteredBookings = bookingsData.filter(booking => booking.id != bookingId);
+
+    //save that array to local storage
+    localStorage.setItem('vinoRuraleData', JSON.stringify(filteredBookings));
+
+    //Update stats and events tabel
+    displayBookings();
+}
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <div id="generateId" class="pt-3 mt-5">
+                <dl class="row mb-0">
+                    <dt class="col-md-3">generateId</dt>
+                    <dd class="col-md-9">
+                        <p><!-- Function Details --></p>
+                    </dd>
+                </dl>
+                <div class="mx-md-3">
+                    <pre class="line-numbers mt-0">
+                        <code class="language-js">
+                            //Generate Id
+function generateId() {
+    return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, c =>
+        (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
+    );
+}
+                        </code>
+                    </pre>
+                </div>
             </div>
         </div>
     </main>
 
     <footer class="container-fluid mt-3 footer-main">
+        <div class="row footer-bg-cta">
+            <div class="col">
+                <div class="container py-3 footer-cta text-center">
+                    <a href="https://github.com/brianley99/VinoRurale" class="footer-message">Check out the full
+                        code!</a>
+                </div>
+            </div>
+        </div>
         <div class="container-xxl">
             <div class="row row-cols-1 row-cols-md-3 gy-3 align-items-center text-center text-light py-3">
                 <div class="col text-md-center">
@@ -142,10 +528,164 @@
 
     </footer>
 
+    <!-- New Booking Modal -->
+    <div class="modal fade" id="NewBookingModal" tabindex="-1" aria-labelledby="NewBookingModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="NewBookingModalLabel">Add a New Booking</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form action="#">
+                    <div class="row g-3 modal-body">
+                        <div class="col-12">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="newBookingClientName"
+                                    placeholder="Enter Name">
+                                <label for="newBookingClientName">Enter Name</label>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-floating">
+                                <input type="number" class="form-control" id="newBookingPeople"
+                                    placeholder="People Attending">
+                                <label for="newBookingPeople">People Attending</label>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-floating">
+                                <input type="date" class="form-control" id="newBookingDate" placeholder="Date">
+                                <label for="newBookingDate">Select a Date</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-floating">
+                                <select class="form-select" id="newBookingTime">
+                                    <option selected disabled></option>
+                                    <option>4:00 PM</option>
+                                    <option>6:00 PM</option>
+                                    <option>8:00 PM</option>
+                                    <option>10:00 PM</option>
+                                </select>
+                                <label for="newBookingTime">Select a Time</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button onclick="saveNewBooking()" type="button" class="btn btn-primary"
+                            data-bs-dismiss="modal">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit/Delete Booking Modal -->
+    <div class="modal fade" id="editBookingModal" tabindex="-1" aria-labelledby="editBookingModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="editBookingModalLabel">Edit Booking</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form action="#">
+                    <input id="editBookingId" type="hidden" />
+                    <div class="row g-3 modal-body">
+                        <div class="col-12">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="editBookingClientName"
+                                    placeholder="Enter Name">
+                                <label for="editBookingClientName">Enter Name</label>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-floating">
+                                <input type="number" class="form-control" id="editBookingPeople"
+                                    placeholder="People Attending">
+                                <label for="editBookingPeople">People Attending</label>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-floating">
+                                <input type="date" class="form-control" id="editBookingDate" placeholder="Date">
+                                <label for="editBookingDate">Select a Date</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-floating">
+                                <select class="form-select" id="editBookingTime">
+                                    <option>4:00 PM</option>
+                                    <option>6:00 PM</option>
+                                    <option>8:00 PM</option>
+                                    <option>10:00 PM</option>
+                                </select>
+                                <label for="editBookingTime">Select a Time</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="d-flex justify-content-between w-100">
+                            <div>
+                                <button onclick="deleteBooking()" type="button" class="btn btn-outline-danger"
+                                    data-bs-dismiss="modal">Delete</button>
+                            </div>
+                            <div>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button onclick="saveEditBooking()" type="button" class="btn btn-primary"
+                                    data-bs-dismiss="modal">Save</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Templates -->
+    <template id="bookingCardTemplate">
+        <div onclick="editBooking(this)" role="button" data-bs-toggle="modal" data-bs-target="#editBookingModal"
+            class="card shadow mx-auto mt-3">
+            <div class="card-body p-4">
+                <h4 data-id="clientName" class="card-title"><!--Name--></h4>
+                <div class="d-flex justify-content-start">
+                    <div class="me-4">
+                        <i class="bi bi-people-fill text-muted"></i>
+                        <span data-id="people"><!--People--></span>
+                    </div>
+                    <div>
+                        <i class="bi bi-calendar-check text-muted me-1"></i>
+                        <span data-id="date" class="me-1"><!--Date--></span>
+                        <span data-id="time"><!--Time--></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+
     <!-- Bootstrap JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
         crossorigin="anonymous"></script>
+
+    <!-- Sweet Alert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- Prism JS -->
+    <script src="/js/prism.js"></script>
+    <script>
+        Prism.plugins.NormalizeWhitespace.setDefaults({
+            'remove-trailing': true,
+            'remove-indent': true,
+            'left-trim': true,
+            'right-trim': true
+        })
+    </script>
+
+    <!-- App JS -->
+    <script src="/js/site.js"></script>
 
 </body>
 
